@@ -6,7 +6,7 @@ CREATE DATABASE number_guessing;
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 	user_id SERIAL NOT NULL PRIMARY KEY,
-	user_name VARCHAR(22)
+	user_name VARCHAR(22) NOT NULL
 );
 
 CREATE TABLE games (
