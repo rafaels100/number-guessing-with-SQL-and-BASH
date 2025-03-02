@@ -1,0 +1,5 @@
+# Ignore environment files
+.env
+
+#ignore other files
+number_guess.sh

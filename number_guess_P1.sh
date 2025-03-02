@@ -1,6 +1,12 @@
 #!/bin/bash
-export PGPASSWORD='toor'
-PSQL="psql -U root -d number_guessing -h 127.0.0.1 --tuples-only -c"
+
+#importo las variables de .env
+if [ -f .env ]; then
+    export $(grep -v '^#' .env | xargs)
+fi
+PGPASSWORD=$PG_PASSWORD
+export PGPASSWORD
+PSQL="psql -U $USR -d number_guessing -h 127.0.0.1 --tuples-only -c"
 
 function MAIN() {
 	#Para generar un numero random entre 1 y 1000
